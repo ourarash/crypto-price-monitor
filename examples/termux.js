@@ -1,4 +1,8 @@
 /**
+ * 
+ * crypto-price-monitor: Termux example
+ * Continuously monitor cryptocurrency prices
+ * Written by Ari Saif
  * Should be run inside [Termux](https://termux.com/) in Android using GPS
  * First install the following apps:
  *  - https://play.google.com/store/apps/details?id=com.termux
@@ -37,7 +41,7 @@ async function updateValuesCallback(notificationOutput, mktCapFormatted) {
   g_notificationOutput = notificationOutput;
   g_mktCapFormatted = mktCapFormatted;
 }
-
+//-----------------------------------------------------------------------------
 /**
  * Our callback function once we get inside the fence
  */
@@ -45,8 +49,6 @@ async function updateNotification() {
   g_updateCounter++;
   
   let frames = spinners.moon.frames;
- 
-    
   if (
     // api.hasTermux &&
     // Object.keys(defines.Globals.cryptoPrices).length > 0 &&

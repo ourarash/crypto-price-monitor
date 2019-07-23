@@ -1,4 +1,8 @@
-// const api = require("termux");
+/**
+ * crypto-price-monitor: Continuously monitor cryptocurrency prices
+ * Written by Ari Saif
+ */
+
 const api = require("termux");
 require("ansicolor").nice;
 const CoinGecko = require("coingecko-api");

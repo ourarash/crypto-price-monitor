@@ -26,7 +26,8 @@ npm install crypto-price-monitor --save
 ![Output example](https://raw.githubusercontent.com/ourarash/crypto-price-monitor/master/screenshot.gif)
 
 
-Termux
+## Termux (Android)
+
 ![Termux](https://raw.githubusercontent.com/ourarash/crypto-price-monitor/master/termux_screenshot.gif)
 # Usage
 ```javascript
