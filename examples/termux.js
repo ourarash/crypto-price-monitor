@@ -33,10 +33,19 @@ async function initialCallback() {
     .run();
 }
 //-----------------------------------------------------------------------------
+var g_notificationOutput, g_mktCapFormatted;
 /**
  * Our callback function once we get inside the fence
  */
 async function updateValuesCallback(notificationOutput, mktCapFormatted) {
+  g_notificationOutput = notificationOutput;
+  g_mktCapFormatted = mktCapFormatted;
+}
+
+/**
+ * Our callback function once we get inside the fence
+ */
+async function updateNotification() {
   if (
     api.hasTermux &&
     Object.keys(defines.Globals.cryptoPrices).length > 0 &&
@@ -44,9 +53,9 @@ async function updateValuesCallback(notificationOutput, mktCapFormatted) {
   ) {
     api
       .notification()
-      .content(notificationOutput)
+      .content(g_notificationOutput)
       .id(g_notification_id)
-      .title(`💰 ` + moment().format("h:mm") + `: ` + mktCapFormatted)
+      .title(`💰 ` + moment().format("h:mm") + `: ` + g_mktCapFormatted)
       //  .url('...')
       .run();
   }
@@ -120,3 +129,7 @@ g_notification_id = utility_functions.hashCode(
 var crypto_price_checker = require("../index.js")(options);
 
 crypto_price_checker.start();
+
+setInterval(() => {
+  updateNotification();
+}, 0.1 * 1000);
