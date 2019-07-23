@@ -49,7 +49,9 @@ async function updateNotification() {
   if (
     api.hasTermux &&
     Object.keys(defines.Globals.cryptoPrices).length > 0 &&
-    defines.Globals.cryptoPrices["BTC"]
+    defines.Globals.cryptoPrices["BTC"] &&
+    g_notificationOutput &&
+    g_mktCapFormatted
   ) {
     api
       .notification()
