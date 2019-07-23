@@ -6,28 +6,10 @@ const CoinGeckoClient = new CoinGecko();
 const numeral = require("numeral");
 const currencyFormatter = require("currency-formatter");
 
-var log;
-if (api.hasTermux) {
-  log = require("ololog").configure({
-    time: { yes: true, print: x => x.toLocaleString().bright.cyan + " " },
-    locate: false,
-    tag: true
-  });
-} else {
-  log = require("log-with-statusbar")({
-    ololog_configure: {
-      time: { yes: true, print: x => x.toLocaleString().bright.cyan + " " },
-      locate: false,
-      tag: true
-    },
-    initialStatusTextArray: ["Please wait..."],
-    minVerbosity: 1, //Minimum verbosity level
-    verbosity: 1, //Default verbosity level
-    enableStatusBar: true
-  });
-}
 
 var defines = require("./defines");
+var log = defines.log;
+
 var moment = require("moment");
 var utility_functions = require("./utility");
 require("ansicolor").nice;

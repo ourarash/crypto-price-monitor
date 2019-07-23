@@ -27,8 +27,8 @@ npm install crypto-price-monitor --save
 
 # Usage
 ```javascript
-var crypto_price_checker = require("crypto-price-monitor")({
+var crypto_price_monitor = require("crypto-price-monitor")({
   cryptosOfInteres: "BTC,ETH,LTC"
 });
-crypto_price_checker.start();
+crypto_price_monitor.start();
 ```
