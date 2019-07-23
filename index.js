@@ -257,7 +257,7 @@ async function printStatus() {
   let output = table(data, options);
 
   let mktCapFormattedRaw =
-    `MKTCAP`.bright + `: ${mktCapFormatted} ${pricePostFix}`;
+    `MKTCAP` + `: ${mktCapFormatted} ${pricePostFix}`;
 
   mktCapFormatted = `MKTCAP`.bright + `: ${mktCapFormatted} ${pricePostFix}`;
 
