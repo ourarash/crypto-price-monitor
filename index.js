@@ -303,8 +303,8 @@ async function printStatus() {
     }
   }
 
-  if (defines.Globals.updateValuesCallback) {
-    defines.Globals.updateValuesCallback(
+  if (defines.Globals.options.updateValuesCallback) {
+    defines.Globals.options.updateValuesCallback(
       notificationOutputRaw,
       mktCapFormattedRaw
     );
@@ -316,8 +316,8 @@ async function printStatus() {
  */
 async function main() {
   defines.Globals.startTime = moment().valueOf();
-  if (defines.Globals.initialCallback) {
-    defines.Globals.initialCallback();
+  if (defines.Globals.options.initialCallback) {
+    defines.Globals.options.initialCallback();
   }
 
   if (defines.Globals.options.getCoinGeckoPrices) {
