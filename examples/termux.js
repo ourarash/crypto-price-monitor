@@ -28,13 +28,6 @@ var g_updateCounter = 0 ;
 async function initialCallback() {
   g_notificationOutput = `Please wait...`;
   g_mktCapFormatted = "Updating crypto prices...";
-  // api
-  //   .notification()
-  //   .content("Updating crypto prices...")
-  //   .id(g_notification_id)
-  //   .title(`⏲️ Please wait...`)
-  //   //  .url('...')
-  //   .run();
 }
 //-----------------------------------------------------------------------------
 /**
@@ -144,4 +137,4 @@ crypto_price_checker.start();
 
 setInterval(() => {
   updateNotification();
-}, 0.5 * 1000);
+}, 1 * 1000);
