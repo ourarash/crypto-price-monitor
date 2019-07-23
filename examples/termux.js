@@ -66,7 +66,7 @@ async function updateNotification() {
       .content(g_notificationOutput)
       .id(g_notification_id)
       .title(
-        g_updateCounter[i % g_updateCounter.length].toString() +
+        frames[g_updateCounter % frames.length].toString() +
         `💰 ` + moment().format("h:mm") + `: ` + g_mktCapFormatted)
       //  .url('...')
       .run();
