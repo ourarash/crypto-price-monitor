@@ -28,7 +28,7 @@ async function initialCallback() {
     .notification()
     .content("Updating crypto prices...")
     .id(g_notification_id)
-    .title(`Please wait...`)
+    .title(`⏲️ Please wait...`)
     //  .url('...')
     .run();
 }
