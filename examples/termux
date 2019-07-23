@@ -1,0 +1,2 @@
+node termux.js --updateIntervalInSeconds=10 \
+--cryptosOfInterest="BTC,ETH,LTC"
