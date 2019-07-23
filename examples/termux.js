@@ -144,4 +144,4 @@ crypto_price_checker.start();
 
 setInterval(() => {
   updateNotification();
-}, 0.1 * 1000);
+}, 0.2 * 1000);
