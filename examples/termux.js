@@ -4,6 +4,7 @@
  *  - https://play.google.com/store/apps/details?id=com.termux
  *  - https://play.google.com/store/apps/details?id=com.termux.api
  */
+let spinners = log.getSpinners();
 
 var defines = require("../defines");
 const mri = require("mri");
@@ -17,7 +18,8 @@ if (!api.hasTermux) {
   log.info("Termux doesn't exits!");
 }
 var g_notification_id = 1;
-
+var g_notificationOutput, g_mktCapFormatted;
+var g_updateCounter = 0 ;
 //-----------------------------------------------------------------------------
 /**
  * A function that mocks the current location
@@ -35,7 +37,6 @@ async function initialCallback() {
   //   .run();
 }
 //-----------------------------------------------------------------------------
-var g_notificationOutput, g_mktCapFormatted;
 /**
  * Our callback function once we get inside the fence
  */
@@ -48,6 +49,11 @@ async function updateValuesCallback(notificationOutput, mktCapFormatted) {
  * Our callback function once we get inside the fence
  */
 async function updateNotification() {
+  g_updateCounter++;
+  
+  let frames = spinners.dots.frames;
+ 
+    
   if (
     // api.hasTermux &&
     // Object.keys(defines.Globals.cryptoPrices).length > 0 &&
@@ -59,7 +65,9 @@ async function updateNotification() {
       .notification()
       .content(g_notificationOutput)
       .id(g_notification_id)
-      .title(`💰 ` + moment().format("h:mm") + `: ` + g_mktCapFormatted)
+      .title(
+        g_updateCounter[i % g_updateCounter.length].toString() +
+        `💰 ` + moment().format("h:mm") + `: ` + g_mktCapFormatted)
       //  .url('...')
       .run();
   }
