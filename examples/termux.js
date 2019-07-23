@@ -4,7 +4,7 @@
  *  - https://play.google.com/store/apps/details?id=com.termux
  *  - https://play.google.com/store/apps/details?id=com.termux.api
  */
-let spinners = log.getSpinners();
+const spinners = Object.assign({}, require("./spinners.json"));
 
 var defines = require("../defines");
 const mri = require("mri");
