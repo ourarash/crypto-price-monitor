@@ -4,10 +4,7 @@ require("ansicolor").nice;
 Globals = {
   options: {
     loopForEver: true,
-    printBanner: true,
-    maxNumberOfIterations: 10,
     getCoinGeckoPrices: true,
-    getForexData_oxr: false,
     initialCallback: null,
     updateValuesCallback: null,
     cryptosOfInterest : [`BTC`, `ETH`, `LTC`],
