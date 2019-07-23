@@ -1,2 +1,2 @@
-node ~/github/crypto-price-monitor termux.js --updateIntervalInSeconds=10 \
+node ~/github/crypto-price-monitor/examples/termux.js --updateIntervalInSeconds=10 \
 --cryptosOfInterest="BTC,ETH,LTC"
