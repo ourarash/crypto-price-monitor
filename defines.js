@@ -46,7 +46,7 @@ Globals = {
 var log;
 if (api.hasTermux) {
   log = require("ololog").configure({
-    time: { yes: true, print: x => x.toLocaleString().bright.cyan + " " },
+    // time: { yes: true, print: x => x.toLocaleString().bright.cyan + " " },
     locate: false,
     tag: true
   });
