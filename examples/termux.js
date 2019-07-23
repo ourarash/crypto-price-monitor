@@ -44,7 +44,7 @@ async function updateValuesCallback(notificationOutput, mktCapFormatted) {
 async function updateNotification() {
   g_updateCounter++;
   
-  let frames = spinners.line.frames;
+  let frames = spinners.simpleDots.frames;
  
     
   if (
