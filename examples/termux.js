@@ -37,13 +37,13 @@ async function initialCallback() {
  * Our callback function once we get inside the fence
  */
 async function updateValuesCallback(notificationOutput, mktCapFormatted) {
-  log("Here")
+  log("Here");
   if (
     api.hasTermux &&
     Object.keys(defines.Globals.cryptoPrices).length > 0 &&
     defines.Globals.cryptoPrices["BTC"]
   ) {
-    log("Here2")
+    log("Here2");
     api
       .notification()
       .content(notificationOutput)
@@ -93,7 +93,9 @@ async function updateDistanceCallBack(updateDistanceResults) {
 //-----------------------------------------------------------------------------
 let options = {
   updateInterval: 5,
-  loopForever: true
+  loopForever: true,
+  updateValuesCallback: updateValuesCallback,
+  initialCallback: initialCallback
 };
 
 //-----------------------------------------------------------------------------
