@@ -24,13 +24,15 @@ var g_notification_id = 1;
  * @returns {string}
  */
 async function initialCallback() {
-  api
-    .notification()
-    .content("Updating crypto prices...")
-    .id(g_notification_id)
-    .title(`⏲️ Please wait...`)
-    //  .url('...')
-    .run();
+  g_notificationOutput = `Please wait...`;
+  g_mktCapFormatted = "Updating crypto prices...";
+  // api
+  //   .notification()
+  //   .content("Updating crypto prices...")
+  //   .id(g_notification_id)
+  //   .title(`⏲️ Please wait...`)
+  //   //  .url('...')
+  //   .run();
 }
 //-----------------------------------------------------------------------------
 var g_notificationOutput, g_mktCapFormatted;
@@ -47,9 +49,9 @@ async function updateValuesCallback(notificationOutput, mktCapFormatted) {
  */
 async function updateNotification() {
   if (
-    api.hasTermux &&
-    Object.keys(defines.Globals.cryptoPrices).length > 0 &&
-    defines.Globals.cryptoPrices["BTC"] &&
+    // api.hasTermux &&
+    // Object.keys(defines.Globals.cryptoPrices).length > 0 &&
+    // defines.Globals.cryptoPrices["BTC"] &&
     g_notificationOutput &&
     g_mktCapFormatted
   ) {
