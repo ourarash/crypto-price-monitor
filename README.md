@@ -6,7 +6,7 @@ Currently, the prices are fetched from CoinGecko.
 This module is ideal for [Termux](https://termux.com/) in Android to continuously show the price of cryptocurrencies in the notification area. See [examples/termux.js]
 
 [![NPM](https://badge.fury.io/js/crypto-price-monitor.svg)](https://www.npmjs.com/package/crypto-price-monitor)
-[![NPM Downloads][downloadst-image]][downloads-url]
+<!-- [![NPM Downloads][downloadst-image]][downloads-url] -->
 
 [downloads-image]: https://img.shields.io/npm/dm/crypto-price-monitor.svg
 [downloadst-image]: https://img.shields.io/npm/dt/crypto-price-monitor.svg
@@ -23,6 +23,7 @@ npm install crypto-price-monitor --save
 
 # Screenshot
 [examples/demo.js](examples/demo.js)
+![Output example](https://raw.githubusercontent.com/ourarash/crypto-price-monitor/master/screenshot.gif)
 
 # Usage
 ```javascript
