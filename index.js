@@ -28,7 +28,7 @@ async function getGlobalMarketData() {
 
   let data = await CoinGeckoClient.global();
   defines.Globals.globalData = data.data.data;
-  log.info("Successfully updated CoinGecko global market data!");
+  log.info("Updated CoinGecko global market data!");
 }
 //-----------------------------------------------------------------------------
 async function getAllPriceFullCoinGeckoAll() {
@@ -88,7 +88,7 @@ async function getAllPriceFullCoinGeckoAll() {
 
     defines.Globals.prices = prices;
     defines.Globals.priceUpdateTimestamp = moment().valueOf();
-    log.info("Successfully Updated CoinGecko prices!");
+    log.info("Updated CoinGecko prices!");
   }
 }
 
@@ -163,7 +163,7 @@ async function getAllPriceFullCoinGecko() {
 
   defines.Globals.prices = prices;
   defines.Globals.priceUpdateTimestamp = moment().valueOf();
-  log.info("Successfully Updated CoinGecko prices!");
+  log.info("Updated CoinGecko prices!");
 }
 
 function getPrice(c) {
