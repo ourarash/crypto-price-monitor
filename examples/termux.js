@@ -37,18 +37,16 @@ async function initialCallback() {
  * Our callback function once we get inside the fence
  */
 async function updateValuesCallback(notificationOutput, mktCapFormatted) {
-  log("Here");
   if (
     api.hasTermux &&
     Object.keys(defines.Globals.cryptoPrices).length > 0 &&
     defines.Globals.cryptoPrices["BTC"]
   ) {
-    log("Here2");
     api
       .notification()
       .content(notificationOutput)
       .id(g_notification_id)
-      .title(moment().format("MM/DD h:mm") + `: ` + mktCapFormatted)
+      .title(`💰 ` + moment().format("h:mm") + `: ` + mktCapFormatted)
       //  .url('...')
       .run();
   }
