@@ -26,7 +26,8 @@ var g_notificationOutput, g_mktCapFormatted;
 var g_updateCounter = 0 ;
 //-----------------------------------------------------------------------------
 /**
- * A function that mocks the current location
+ * A function that is called in the beginning
+ * We set g_notificationOutput to show a proper message
  * @returns {string}
  */
 async function initialCallback() {
@@ -35,7 +36,8 @@ async function initialCallback() {
 }
 //-----------------------------------------------------------------------------
 /**
- * Our callback function once we get inside the fence
+ * Our callback function that is called each time values are updated
+ * We only update g_notificationOutput to be shown in notification area
  */
 async function updateValuesCallback(notificationOutput, mktCapFormatted) {
   g_notificationOutput = notificationOutput;
@@ -43,16 +45,15 @@ async function updateValuesCallback(notificationOutput, mktCapFormatted) {
 }
 //-----------------------------------------------------------------------------
 /**
- * Our callback function once we get inside the fence
+ * This function is called in an interval to update the notification message
  */
 async function updateNotification() {
   g_updateCounter++;
   
+  // Set the animation frame
   let frames = spinners.moon.frames;
   if (
-    // api.hasTermux &&
-    // Object.keys(defines.Globals.cryptoPrices).length > 0 &&
-    // defines.Globals.cryptoPrices["BTC"] &&
+    
     g_notificationOutput &&
     g_mktCapFormatted
   ) {
@@ -67,43 +68,7 @@ async function updateNotification() {
       .run();
   }
 }
-//-----------------------------------------------------------------------------
-/**
- * @returns {object}
- */
-function buildNotification(updateDistanceResults) {
-  let notificationTitle = `
-  curDist: ${updateDistanceResults.curDistance.text},
-  curDur: ${updateDistanceResults.curDuration.text},
-  inside: ${updateDistanceResults.insideFence}`;
 
-  let notificationText = `Activates on:
-  ${updateDistanceResults.activateFenceOn},
-  duration:${updateDistanceResults.fenceDurationValue},
-  distance:${updateDistanceResults.fenceDistanceValue}
-  `;
-  return {
-    title: notificationTitle,
-    text: notificationText
-  };
-}
-//-----------------------------------------------------------------------------
-/**
- * Callback function to be called whenever the current location and distance
- * is updated
- * @param {Object} updateDistanceResults
- */
-async function updateDistanceCallBack(updateDistanceResults) {
-  let notification = buildNotification(updateDistanceResults);
-
-  api
-    .notification()
-    .content(notification.text)
-    .id(g_notification_id)
-    .title(notification.title)
-    //  .url('...')
-    .run();
-}
 //-----------------------------------------------------------------------------
 let options = {
   updateInterval: 5,
